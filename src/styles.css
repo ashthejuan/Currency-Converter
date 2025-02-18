@@ -5,7 +5,7 @@ html, body {
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f4f4f9;
-  color: #333;
+  color: #000000;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -33,9 +33,11 @@ html, body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #4caf50;
+  background-color: #0c0a3e;
   color: white;
   font-size: 1.2rem;
+  padding-right: 30px;
+  padding-left: 30px;
   border-bottom: 1px solid #ccc;
 };
 
@@ -44,21 +46,35 @@ html, body {
 }
 
 .header .dark{
-    background-color: #1e88e5;
+    background-color: #0c0a3e;
 }
 
-.footer{
+/* .footer{
     padding: 1rem;
     text-align: center;
-    background-color: #4caf50;
+    background-color: #0c0a3e;
     color: white;
     font-size: 0.9rem;
     border-radius: 6px;
     border-top: 1px solid #ccc;
-};
+}; */
 
+.footer {
+  margin-top: auto; /* Pushes the footer to the bottom */
+  text-align: center; /* Center-align the text */
+  padding: 1rem;
+  background-color: #0c0a3e; /* Green background */
+  color: white; /* White text */
+  font-size: 0.9rem;
+}
+/* 
 .app.dark .footer{
     background-color: #1e88e5;
+} */
+
+.app.dark .footer {
+  background-color: #0c0a3e; /* Blue background for dark mode */
+  color: white;
 }
 
 .theme-toggle {
@@ -84,7 +100,7 @@ html, body {
     padding: 2rem;
     background: white;
     border-radius: 12px;
-    border: 2px solid #4caf50 !important; /* Force the border to appear */
+    border: 2px solid #0c0a3e !important; /* Force the border to appear */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
@@ -94,7 +110,7 @@ html, body {
 .converter { 
   max-width: 500px;
   width: 100%;
-  border: 2px solid #4caf50 ;
+  border: 2px solid #0c0a3e ;
   margin: 0 auto;
   padding: 2rem;
   background: white;
@@ -107,7 +123,7 @@ html, body {
 .converter.dark {
   background: #1e1e1e;
   border-color: #1e88e5;
-  color: #fff;
+  color: #000000;
 }
 
 .input-group {
@@ -134,7 +150,7 @@ input {
 }
 
 button {
-  background-color: #4caf50;
+  background-color: #0c0a3e;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -152,4 +168,51 @@ button:hover {
     background-color: #333;
     color: #fff;
     border-color: #1e88e5;
+}
+
+/* Switch Toggle Styles */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px; /* Width of the switch */
+  height: 25px; /* Height of the switch */
+}
+
+.theme-switch input {
+  opacity: 0; /* Hide the actual checkbox */
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc; /* Default (light mode) background */
+  border-radius: 25px; /* Rounded corners for the slider */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.slider::before {
+  content: '';
+  position: absolute;
+  width: 20px; /* Size of the circle inside the slider */
+  height: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white; /* Circle color */
+  border-radius: 50%; /* Make it circular */
+  transition: transform 0.3s; /* Smooth sliding animation */
+}
+
+/* Dark Mode Styles */
+.dark .theme-switch .slider {
+  background-color: #252d34; /* Dark mode background */
+}
+
+.dark .theme-switch .slider::before {
+  transform: translateX(22px); /* Move the circle to the right */
 }
