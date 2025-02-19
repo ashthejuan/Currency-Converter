@@ -30,6 +30,12 @@ const CurrencyConverter = () => {
         convertCurrency(amount, fromCurrency, toCurrency, exchangeRates);   
     };
     
+    const swapCurrency = () => {
+        const temp = fromCurrency;
+        setFromCurrency(toCurrency);
+        setToCurrency(temp);
+    };
+
     return (
         <div className="converter">
             <div className="input-group">
@@ -67,7 +73,16 @@ const CurrencyConverter = () => {
                     >
                 </input>
             </div>
-            <button onClick={handleConvert}>Convert</button>
+            {/* <button onClick={handleConvert}>Convert</button>
+            <button className="swap-btn" onClick={swapCurrency}>⇄</button> */}
+            <div className="button-container">
+            <button onClick={swapCurrency} className="swap-button">
+                ⇄ Swap
+            </button>
+            <button onClick={handleConvert} className="convert-button">
+                Convert
+            </button>
+            </div>
         </div>
     )
 }

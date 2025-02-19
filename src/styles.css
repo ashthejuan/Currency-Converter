@@ -91,7 +91,6 @@ html, body {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  /* min-height: calc(100vh - 120px); */
 };
  
 .main-content .converter {
@@ -100,16 +99,11 @@ html, body {
     padding: 2rem;
     background: white;
     border-radius: 12px;
-    border: 2px solid #0c0a3e !important; /* Force the border to appear */
+    border: 2px solid #0c0a3e !important;
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
   }
   
-/* .main-content .dark .converter {
-    background: #1e1e1e;
-    border-color: #1e1e1e;
-    color: #fff;
-} */
 
 .converter { 
   max-width: 500px;
@@ -127,12 +121,13 @@ html, body {
 
 .input-group {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  /* justify-content: space-evenly; */
   margin-bottom: 1.5rem;
 }
 
 .currency-dropdown {
-  width: 45%;
+  width: 35%;
   padding: 0.75rem;
   margin-right: 1rem;
   border: 1px solid #ccc;
@@ -149,35 +144,6 @@ input {
 input{
   border: 1px solid #ccc;
   border-radius: 6px;
-}
-
-button {
-  background-color: #fff;
-  color: black;
-  border: 1px solid #ccc;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #0c0a3e;
-  color: white;
-}
-
-.dark button {
-  border: none;
-  background-color: #0c0a3e;
-  color: white;
-  border: 1px solid #ccc;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-}
-
-.dark button:hover {
-  background-color: white;
-  color: black;
 }
 
 .dark .currency-dropdown, .dark input, .dark .converter{
@@ -233,3 +199,43 @@ button:hover {
 .dark .theme-switch .slider::before {
   transform: translateX(22px); /* Move the circle to the right */
 }
+
+button {
+  background-color: #fff;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+button:hover {
+  background-color: #0c0a3e;
+  color: white;
+}
+
+.dark button {
+  border: none;
+  background-color: #0c0a3e;
+  color: white;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.dark button:hover {
+  background-color: white;
+  color: black;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+};
+
+
