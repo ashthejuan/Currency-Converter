@@ -72,7 +72,7 @@ html, body {
     background-color: #1e88e5;
 } */
 
-.app.dark .footer {
+.dark .footer, .dark .header{
   background-color: #0c0a3e; /* Blue background for dark mode */
   color: white;
 }
@@ -101,11 +101,15 @@ html, body {
     background: white;
     border-radius: 12px;
     border: 2px solid #0c0a3e !important; /* Force the border to appear */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
   }
   
+/* .main-content .dark .converter {
+    background: #1e1e1e;
+    border-color: #1e1e1e;
+    color: #fff;
+} */
 
 .converter { 
   max-width: 500px;
@@ -120,16 +124,10 @@ html, body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.converter.dark {
-  background: #1e1e1e;
-  border-color: #1e88e5;
-  color: #000000;
-}
 
 .input-group {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
   margin-bottom: 1.5rem;
 }
 
@@ -145,15 +143,18 @@ html, body {
 input {
   width: 55%;
   padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
   transition: border-color 0.3s;
 }
 
+input{
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
 button {
-  background-color: #0c0a3e;
-  color: white;
-  border: none;
+  background-color: #fff;
+  color: black;
+  border: 1px solid #ccc;
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
   cursor: pointer;
@@ -162,13 +163,28 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #0c0a3e;
+  color: white;
 }
 
-.dark .currency-dropdown, .dark input{
-    background-color: #333;
+.dark button {
+  border: none;
+  background-color: #0c0a3e;
+  color: white;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.dark button:hover {
+  background-color: white;
+  color: black;
+}
+
+.dark .currency-dropdown, .dark input, .dark .converter{
+    background-color: #121212;
     color: #fff;
-    border-color: #1e88e5;
+    border-color: #fff;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 /* Switch Toggle Styles */
